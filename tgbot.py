@@ -6,9 +6,8 @@ from TOKENBOT import TOKEN
 
 bot = telebot.TeleBot(TOKEN)
 
-user_states = {}  # тут будем хранить информацию о действиях пользователя
+user_states = {}
 
-# набор символов из которых составляем изображение
 ASCII_CHARS = '@%#*+=-:. '
 
 
