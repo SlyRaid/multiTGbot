@@ -23,14 +23,12 @@ def grayify(image):
 
 
 def image_to_ascii(image_stream, new_width=40):
-    # Переводим в оттенки серого
     image = Image.open(image_stream).convert('L')
 
-    # меняем размер сохраняя отношение сторон
     width, height = image.size
     aspect_ratio = height / float(width)
     new_height = int(
-        aspect_ratio * new_width * 0.55)  # 0,55 так как буквы выше чем шире
+        aspect_ratio * new_width * 0.55)
     img_resized = image.resize((new_width, new_height))
 
     img_str = pixels_to_ascii(img_resized)
@@ -54,7 +52,6 @@ def pixels_to_ascii(image):
     return characters
 
 
-# Огрубляем изображение
 def pixelate_image(image, pixel_size):
     image = image.resize(
         (image.size[0] // pixel_size, image.size[1] // pixel_size),
